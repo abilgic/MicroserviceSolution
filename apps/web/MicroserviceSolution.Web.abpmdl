@@ -1,0 +1,13 @@
+{
+  "folders": {
+    "items": {
+      "src": {}
+    }
+  },
+  "packages": {
+    "MicroserviceSolution.Web": {
+      "path": "src/MicroserviceSolution.Web/MicroserviceSolution.Web.abppkg",
+      "folder": "src"
+    }
+  }
+}

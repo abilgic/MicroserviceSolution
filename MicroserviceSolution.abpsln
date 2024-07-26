@@ -1,0 +1,59 @@
+{
+  "folders": {
+    "items": {
+      "apps": {},
+      "gateways": {},
+      "services": {}
+    }
+  },
+  "modules": {
+    "MicroserviceSolution": {
+      "path": "MicroserviceSolution.abpmdl"
+    },
+    "MicroserviceSolution.AuthServer": {
+      "path": "apps/auth-server/MicroserviceSolution.AuthServer.abpmdl",
+      "folder": "apps"
+    },
+    "MicroserviceSolution.Blazor": {
+      "path": "apps/blazor/MicroserviceSolution.Blazor.abpmdl",
+      "folder": "apps"
+    },
+    "MicroserviceSolution.PublicWeb": {
+      "path": "apps/public-web/MicroserviceSolution.PublicWeb.abpmdl",
+      "folder": "apps"
+    },
+    "MicroserviceSolution.Web": {
+      "path": "apps/web/MicroserviceSolution.Web.abpmdl",
+      "folder": "apps"
+    },
+    "MicroserviceSolution.WebGateway": {
+      "path": "gateways/web/MicroserviceSolution.WebGateway.abpmdl",
+      "folder": "gateways"
+    },
+    "MicroserviceSolution.PublicWebGateway": {
+      "path": "gateways/web-public/MicroserviceSolution.PublicWebGateway.abpmdl",
+      "folder": "gateways"
+    },
+    "MicroserviceSolution.AdministrationService": {
+      "path": "services/administration/MicroserviceSolution.AdministrationService.abpmdl",
+      "folder": "services"
+    },
+    "MicroserviceSolution.IdentityService": {
+      "path": "services/identity/MicroserviceSolution.IdentityService.abpmdl",
+      "folder": "services"
+    },
+    "MicroserviceSolution.ProductService": {
+      "path": "services/product/MicroserviceSolution.ProductService.abpmdl",
+      "folder": "services"
+    },
+    "MicroserviceSolution.SaasService": {
+      "path": "services/saas/MicroserviceSolution.SaasService.abpmdl",
+      "folder": "services"
+    }
+  },
+  "runProfiles": {
+    "Default": {
+      "path": "etc/run-profiles/Default.abprun.json"
+    }
+  }
+}

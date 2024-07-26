@@ -1,0 +1,31 @@
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS builder
+WORKDIR /src
+
+COPY "MicroserviceSolution.sln" "MicroserviceSolution.sln"
+
+# Applications
+COPY "apps/auth-server/src/MicroserviceSolution.AuthServer/MicroserviceSolution.AuthServer.csproj" "apps/auth-server/src/MicroserviceSolution.AuthServer/MicroserviceSolution.AuthServer.csproj"
+COPY "apps/public-web/src/MicroserviceSolution.PublicWeb/MicroserviceSolution.PublicWeb.csproj" "apps/public-web/src/MicroserviceSolution.PublicWeb/MicroserviceSolution.PublicWeb.csproj"
+COPY "apps/web/src/MicroserviceSolution.Web/MicroserviceSolution.Web.csproj" "apps/web/src/MicroserviceSolution.Web/MicroserviceSolution.Web.csproj"
+# Shared Projects
+COPY "shared/MicroserviceSolution.DbMigrator/MicroserviceSolution.DbMigrator.csproj" "shared/MicroserviceSolution.DbMigrator/MicroserviceSolution.DbMigrator.csproj"
+COPY "shared/MicroserviceSolution.Shared.Hosting/MicroserviceSolution.Shared.Hosting.csproj" "shared/MicroserviceSolution.Shared.Hosting/MicroserviceSolution.Shared.Hosting.csproj"
+COPY "shared/MicroserviceSolution.Shared.Hosting.Gateways/MicroserviceSolution.Shared.Hosting.Gateways.csproj" "shared/MicroserviceSolution.Shared.Hosting.Gateways/MicroserviceSolution.Shared.Hosting.Gateways.csproj"
+COPY "shared/MicroserviceSolution.Shared.Hosting.Microservices/MicroserviceSolution.Shared.Hosting.Microservices.csproj" "shared/MicroserviceSolution.Shared.Hosting.Microservices/MicroserviceSolution.Shared.Hosting.Microservices.csproj"
+COPY "shared/MicroserviceSolution.Shared.Hosting.AspNetCore/MicroserviceSolution.Shared.Hosting.AspNetCore.csproj" "shared/MicroserviceSolution.Shared.Hosting.AspNetCore/MicroserviceSolution.Shared.Hosting.AspNetCore.csproj"
+COPY "shared/MicroserviceSolution.Shared.Hosting/MicroserviceSolution.Shared.Hosting.csproj" "shared/MicroserviceSolution.Shared.Hosting/MicroserviceSolution.Shared.Hosting.csproj"
+COPY "shared/MicroserviceSolution.Shared.Localization/MicroserviceSolution.Shared.Localization.csproj" "shared/MicroserviceSolution.Shared.Localization/MicroserviceSolution.Shared.Localization.csproj"
+
+# Microservices
+COPY "services/administration/src/MicroserviceSolution.AdministrationService.HttpApi.Host/MicroserviceSolution.AdministrationService.HttpApi.Host.csproj" "services/administration/src/MicroserviceSolution.AdministrationService.HttpApi.Host/MicroserviceSolution.AdministrationService.HttpApi.Host.csproj"
+COPY "services/identity/src/MicroserviceSolution.IdentityService.HttpApi.Host/MicroserviceSolution.IdentityService.HttpApi.Host.csproj" "services/identity/src/MicroserviceSolution.IdentityService.HttpApi.Host/MicroserviceSolution.IdentityService.HttpApi.Host.csproj"
+COPY "services/saas/src/MicroserviceSolution.SaasService.HttpApi.Host/MicroserviceSolution.SaasService.HttpApi.Host.csproj" "services/saas/src/MicroserviceSolution.SaasService.HttpApi.Host/MicroserviceSolution.SaasService.HttpApi.Host.csproj"
+COPY "services/product/src/MicroserviceSolution.ProductService.HttpApi.Host/MicroserviceSolution.ProductService.HttpApi.Host.csproj" "services/product/src/MicroserviceSolution.ProductService.HttpApi.Host/MicroserviceSolution.ProductService.HttpApi.Host.csproj"
+# Gateways
+COPY "gateways/web/src/MicroserviceSolution.WebGateway/MicroserviceSolution.WebGateway.csproj" "gateways/web/src/MicroserviceSolution.WebGateway/MicroserviceSolution.WebGateway.csproj"
+COPY "gateways/web-public/src/MicroserviceSolution.PublicWebGateway/MicroserviceSolution.PublicWebGateway.csproj" "gateways/web-public/src/MicroserviceSolution.PublicWebGateway/MicroserviceSolution.PublicWebGateway.csproj"
+
+COPY "NuGet.Config" "NuGet.Config"
+
+RUN dotnet restore "MicroserviceSolution.sln"

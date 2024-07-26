@@ -1,0 +1,58 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "MicroserviceSolution.SaasService.HttpApi": {
+      "path": "src/MicroserviceSolution.SaasService.HttpApi/MicroserviceSolution.SaasService.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.SaasService.Application.Contracts": {
+      "path": "src/MicroserviceSolution.SaasService.Application.Contracts/MicroserviceSolution.SaasService.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.SaasService.Application": {
+      "path": "src/MicroserviceSolution.SaasService.Application/MicroserviceSolution.SaasService.Application.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.SaasService.Domain.Shared": {
+      "path": "src/MicroserviceSolution.SaasService.Domain.Shared/MicroserviceSolution.SaasService.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.SaasService.Domain": {
+      "path": "src/MicroserviceSolution.SaasService.Domain/MicroserviceSolution.SaasService.Domain.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.SaasService.EntityFrameworkCore": {
+      "path": "src/MicroserviceSolution.SaasService.EntityFrameworkCore/MicroserviceSolution.SaasService.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.SaasService.HttpApi.Client": {
+      "path": "src/MicroserviceSolution.SaasService.HttpApi.Client/MicroserviceSolution.SaasService.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.SaasService.HttpApi.Host": {
+      "path": "src/MicroserviceSolution.SaasService.HttpApi.Host/MicroserviceSolution.SaasService.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.SaasService.TestBase": {
+      "path": "test/MicroserviceSolution.SaasService.TestBase/MicroserviceSolution.SaasService.TestBase.abppkg",
+      "folder": "test"
+    },
+    "MicroserviceSolution.SaasService.Domain.Tests": {
+      "path": "test/MicroserviceSolution.SaasService.Domain.Tests/MicroserviceSolution.SaasService.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "MicroserviceSolution.SaasService.EntityFrameworkCore.Tests": {
+      "path": "test/MicroserviceSolution.SaasService.EntityFrameworkCore.Tests/MicroserviceSolution.SaasService.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "MicroserviceSolution.MicroserviceName.Application.Tests": {
+      "path": "test/MicroserviceSolution.SaasService.Application.Tests/MicroserviceSolution.SaasService.Application.Tests.abppkg",
+      "folder": "test"
+    }
+  }
+}

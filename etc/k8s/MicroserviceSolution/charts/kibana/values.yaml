@@ -1,0 +1,6 @@
+config:
+  elasticsearchUrl: http://microservicesolution-st-elasticsearch:9200
+
+ingress:
+  host: kibana-microservicesolution.dev
+  tlsSecret: microservicesolution-tls

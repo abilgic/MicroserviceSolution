@@ -1,0 +1,58 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "MicroserviceSolution.IdentityService.HttpApi": {
+      "path": "src/MicroserviceSolution.IdentityService.HttpApi/MicroserviceSolution.IdentityService.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.IdentityService.Application": {
+      "path": "src/MicroserviceSolution.IdentityService.Application/MicroserviceSolution.IdentityService.Application.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.IdentityService.Domain": {
+      "path": "src/MicroserviceSolution.IdentityService.Domain/MicroserviceSolution.IdentityService.Domain.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.IdentityService.Domain.Shared": {
+      "path": "src/MicroserviceSolution.IdentityService.Domain.Shared/MicroserviceSolution.IdentityService.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.IdentityService.EntityFrameworkCore": {
+      "path": "src/MicroserviceSolution.IdentityService.EntityFrameworkCore/MicroserviceSolution.IdentityService.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.IdentityService.HttpApi.Client": {
+      "path": "src/MicroserviceSolution.IdentityService.HttpApi.Client/MicroserviceSolution.IdentityService.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.IdentityService.Application.Contracts": {
+      "path": "src/MicroserviceSolution.IdentityService.Application.Contracts/MicroserviceSolution.IdentityService.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.IdentityService.HttpApi.Host": {
+      "path": "src/MicroserviceSolution.IdentityService.HttpApi.Host/MicroserviceSolution.IdentityService.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.IdentityService.TestBase": {
+      "path": "test/MicroserviceSolution.IdentityService.TestBase/MicroserviceSolution.IdentityService.TestBase.abppkg",
+      "folder": "test"
+    },
+    "MicroserviceSolution.IdentityService.Domain.Tests": {
+      "path": "test/MicroserviceSolution.IdentityService.Domain.Tests/MicroserviceSolution.IdentityService.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "MicroserviceSolution.IdentityService.EntityFrameworkCore.Tests": {
+      "path": "test/MicroserviceSolution.IdentityService.EntityFrameworkCore.Tests/MicroserviceSolution.IdentityService.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "MicroserviceSolution.IdentityService.Application.Tests": {
+      "path": "test/MicroserviceSolution.IdentityService.Application.Tests/MicroserviceSolution.IdentityService.Application.Tests.abppkg",
+      "folder": "test"
+    }
+  }
+}

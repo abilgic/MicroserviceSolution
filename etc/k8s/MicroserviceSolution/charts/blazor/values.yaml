@@ -1,0 +1,18 @@
+config:
+  selfUrl: # https://blazor.microservicesolution.dev
+  gatewayUrl: # https://gateway-web.microservicesolution.dev
+  authServer:
+      authority: # https://microservicesolution-st-authserver
+      responseType: "code"
+  AbpLicenseCode: #
+
+ingress:
+  host: # blazor.microservicesolution.dev
+  tlsSecret: microservicesolution-tls
+
+image:
+  repository: mycompanyname/microservicesolution-app-blazor
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

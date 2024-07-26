@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MicroserviceSolution.ProductService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="8.2.0" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="8.2.0" />
+    <ProjectReference Include="..\MicroserviceSolution.ProductService.Application.Contracts\MicroserviceSolution.ProductService.Application.Contracts.csproj" />
+    <ProjectReference Include="..\MicroserviceSolution.ProductService.Domain\MicroserviceSolution.ProductService.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

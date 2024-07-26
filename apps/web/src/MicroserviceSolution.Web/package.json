@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "name": "MicroserviceSolutionWeb",
+  "private": true,
+  "dependencies": {
+    "@volo/abp.aspnetcore.mvc.ui.theme.leptonx": "~3.2.0",
+    "@volo/identity": "~8.2.0",
+    "@abp/chart.js": "~8.2.0",
+    "@volo/language-management": "~8.2.0"
+  }
+}

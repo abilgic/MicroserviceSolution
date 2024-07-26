@@ -1,0 +1,21 @@
+config:
+  selfUrl: # https://angular.microservicesolution.dev
+  gatewayUrl: # https://gateway-web.microservicesolution.dev
+  authServer:
+      authority: # https://authserver.microservicesolution.dev
+      requireHttpsMetadata: # false
+      responseType: "code"
+      strictDiscoveryDocumentValidation: false
+      skipIssuerCheck: true
+  AbpLicenseCode: #
+
+ingress:
+  host: # angular.microservicesolution.dev
+  tlsSecret: microservicesolution-tls
+
+image:
+  repository: mycompanyname/microservicesolution-app-angular
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

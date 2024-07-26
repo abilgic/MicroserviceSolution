@@ -1,0 +1,370 @@
+# auth-server sub-chart override
+authserver:
+  config:
+    selfUrl: https://authserver.microservicesolution.dev
+    corsOrigins: https://angular.microservicesolution.dev,https://blazor.microservicesolution.dev,https://gateway-web.microservicesolution.dev,https://gateway-public.microservicesolution.dev,https://identity.microservicesolution.dev,https://administration.microservicesolution.dev,https://saas.microservicesolution.dev,https://product.microservicesolution.dev
+    allowedRedirectUrls: https://angular.microservicesolution.dev,http://angular.microservicesolution.dev,https://blazor.microservicesolution.dev,http://blazor.microservicesolution.dev,https://blazor.microservicesolution.dev,https://blazor-server.microservicesolution.dev,https://web.microservicesolution.dev
+    disablePii: "false"
+    identityService:
+      connString: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Identity;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    administrationService:
+      connString: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    saasService:
+      connString: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    authServer:
+      authority: https://authserver.microservicesolution.dev
+      requireHttpsMetadata: "false"
+      swaggerClientId: WebGateway_Swagger
+    dotnetEnv: Staging
+    redisHost: microservicesolution-st-redis
+    rabbitmqHost: microservicesolution-st-rabbitmq
+    elasticsearchUrl: http://microservicesolution-st-elasticsearch
+  ingress:
+    host: authserver.microservicesolution.dev
+  image:
+    repository: mycompanyname/microservicesolution-app-authserver
+    tag: latest
+
+# identity-service sub-chart override
+identity:
+  config:
+    selfUrl: https://identity.microservicesolution.dev
+    corsOrigins: https://gateway-web.microservicesolution.dev
+    connectionStrings:
+      identityService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Identity;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      administrationService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    authServer:
+      authority: http://microservicesolution-st-authserver
+      requireHttpsMetadata: "false"
+      metadataAddress: https://authserver.microservicesolution.dev
+      swaggerClientId: WebGateway_Swagger
+    dotnetEnv: Staging
+    redisHost: microservicesolution-st-redis
+    rabbitmqHost: microservicesolution-st-rabbitmq
+    elasticsearchUrl: http://microservicesolution-st-elasticsearch
+  openIdDict: #Seed applications and resources
+    applications:
+      authServerRootUrl: https://authserver.microservicesolution.dev
+      angularRootUrl: https://angular.microservicesolution.dev
+      webRootUrl: https://web.microservicesolution.dev
+      blazorRootUrl: https://blazor.microservicesolution.dev
+      blazorServerRootUrl: https://blazor-server.microservicesolution.dev
+      publicWebRootUrl: https://microservicesolution.dev
+      webGatewayRootUrl: https://gateway-web.microservicesolution.dev
+      publicWebGatewayRootUrl: https://gateway-public.microservicesolution.dev
+    resources:  
+      accountServiceRootUrl: https://authserver.microservicesolution.dev
+      administrationServiceRootUrl: https://administration.microservicesolution.dev
+      identityServiceRootUrl: https://identity.microservicesolution.dev
+      saasServiceRootUrl: https://saas.microservicesolution.dev
+      productServiceRootUrl: https://product.microservicesolution.dev
+  ingress:
+    host: identity.microservicesolution.dev
+  image:
+    repository: mycompanyname/microservicesolution-service-identity
+    tag: latest
+
+# administration-service sub-chart override
+administration:
+  config:
+    selfUrl: https://administration.microservicesolution.dev
+    corsOrigins: https://gateway-web.microservicesolution.dev,https://gateway-public.microservicesolution.dev
+    connectionStrings:
+      administrationService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"    
+    authServer:
+      authority: http://microservicesolution-st-authserver
+      requireHttpsMetadata: "false"
+      metadataAddress: https://authserver.microservicesolution.dev
+      swaggerClientId: WebGateway_Swagger
+    remoteServices:
+      abpIdentityBaseUrl: http://microservicesolution-st-identity
+      useCurrentToken: "false"   
+    dotnetEnv: Staging
+    redisHost: microservicesolution-st-redis
+    rabbitmqHost: microservicesolution-st-rabbitmq
+    elasticsearchUrl: http://microservicesolution-st-elasticsearch
+  synchedCommunication: # Used for server-to-server (client-credentials) communication with identityService for user permissions
+    authority: http://microservicesolution-st-authserver
+    requireHttps: "false"
+    validateIssuerName: "false"
+    validateEndpoints: "false"
+  ingress:
+    host: administration.microservicesolution.dev
+  image:
+    repository: mycompanyname/microservicesolution-service-administration
+    tag: latest
+
+# saas-service sub-chart override
+saas:
+  config:
+    selfUrl: https://saas.microservicesolution.dev
+    corsOrigins: https://gateway-web.microservicesolution.dev
+    connectionStrings:
+      administrationService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    authServer:
+      authority: http://microservicesolution-st-authserver
+      requireHttpsMetadata: "false"
+      metadataAddress: https://authserver.microservicesolution.dev
+      swaggerClientId: WebGateway_Swagger
+    dotnetEnv: Staging
+    redisHost: microservicesolution-st-redis
+    rabbitmqHost: microservicesolution-st-rabbitmq
+    elasticsearchUrl: http://microservicesolution-st-elasticsearch
+  ingress:
+    host: saas.microservicesolution.dev
+  image:
+    repository: mycompanyname/microservicesolution-service-saas
+    tag: latest  
+
+# product-service sub-chart override
+product:
+  config:
+    selfUrl: https://product.microservicesolution.dev
+    corsOrigins: https://gateway-web.microservicesolution.dev,https://gateway-public.microservicesolution.dev
+    connectionStrings:
+      productService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_ProductService;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      administrationService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    authServer:
+      authority: http://microservicesolution-st-authserver
+      requireHttpsMetadata: "false"
+      metadataAddress: https://authserver.microservicesolution.dev
+      swaggerClientId: WebGateway_Swagger
+    dotnetEnv: Staging
+    redisHost: microservicesolution-st-redis
+    rabbitmqHost: microservicesolution-st-rabbitmq
+    elasticsearchUrl: http://microservicesolution-st-elasticsearch
+  ingress:
+    host: product.microservicesolution.dev
+  image:
+    repository: mycompanyname/microservicesolution-service-product
+    tag: latest
+
+# gateway-web sub-chart override
+gateway-web:
+  config:
+    selfUrl: https://gateway-web.microservicesolution.dev
+    corsOrigins: https://angular.microservicesolution.dev,https://blazor.microservicesolution.dev
+    authServer:
+      authority: http://microservicesolution-st-authserver
+      requireHttpsMetadata: "false"
+      metadataAddress: https://authserver.microservicesolution.dev
+      swaggerClientId: WebGateway_Swagger      
+    dotnetEnv: Staging
+    redisHost: microservicesolution-st-redis
+    rabbitmqHost: microservicesolution-st-rabbitmq
+    elasticsearchUrl: http://microservicesolution-st-elasticsearch
+  reRoutes:
+    accountService:
+      url: http://microservicesolution-st-authserver
+    saasService:
+      url: http://microservicesolution-st-saas
+    administrationService:
+      url: http://microservicesolution-st-administration
+    identityService:
+      url: http://microservicesolution-st-identity
+    productService:
+      url: http://microservicesolution-st-product
+  ingress:
+    host: gateway-web.microservicesolution.dev
+  image:
+    repository: mycompanyname/microservicesolution-gateway-web
+    tag: latest
+    pullPolicy: IfNotPresent
+
+# gateway-web-public sub-chart override
+gateway-web-public:
+  config:
+    selfUrl: https://gateway-public.microservicesolution.dev
+    authServer:
+      authority: http://microservicesolution-st-authserver
+      requireHttpsMetadata: "false"
+      metadataAddress: https://authserver.microservicesolution.dev
+      swaggerClientId: WebGateway_Swagger      
+    dotnetEnv: Staging 
+    redisHost: microservicesolution-st-redis
+    rabbitmqHost: microservicesolution-st-rabbitmq
+    elasticsearchUrl: http://microservicesolution-st-elasticsearch
+  reRoutes:
+    accountService:
+      url: http://microservicesolution-st-authserver
+    saasService:
+      url: http://microservicesolution-st-saas
+    administrationService:
+      url: http://microservicesolution-st-administration
+    productService:
+      url: http://microservicesolution-st-product  
+  ingress:
+    host: gateway-public.microservicesolution.dev
+    tlsSecret: microservicesolution-tls
+  image:
+    repository: mycompanyname/microservicesolution-gateway-web-public
+    tag: latest
+    pullPolicy: IfNotPresent
+
+kibana:
+  config:
+    elasticsearchUrl: http://microservicesolution-st-elasticsearch:9200
+  ingress:
+    host: kibana.microservicesolution.dev
+    tlsSecret: microservicesolution-tls
+
+# dbmigrator sub-chart override
+dbmigrator:
+  config:
+    connectionStrings:
+      identityService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Identity;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      administrationService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      productService: "Server=microservicesolution-st-sqldb,1433;Database=MicroserviceSolution_ProductService;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    dotnetEnv: Staging
+    elasticsearchUrl: http://microservicesolution-st-elasticsearch
+    redisHost: microservicesolution-st-redis
+  openIdDict:
+    applications:
+      authServerRootUrl: https://authserver.microservicesolution.dev
+      angularRootUrl: https://angular.microservicesolution.dev
+      webRootUrl: https://web.microservicesolution.dev
+      blazorRootUrl: https://blazor.microservicesolution.dev
+      blazorServerRootUrl: https://blazor-server.microservicesolution.dev
+      publicWebRootUrl: https://microservicesolution.dev
+      webGatewayRootUrl: https://gateway-web.microservicesolution.dev
+      publicWebGatewayRootUrl: https://gateway-public.microservicesolution.dev
+    resources:  
+      accountServiceRootUrl: https://authserver.microservicesolution.dev
+      administrationServiceRootUrl: https://administration.microservicesolution.dev
+      identityServiceRootUrl: https://identity.microservicesolution.dev
+      saasServiceRootUrl: https://saas.microservicesolution.dev
+      productServiceRootUrl: https://product.microservicesolution.dev
+  image:
+    repository: mycompanyname/microservicesolution-db-migrator
+    tag: latest
+    pullPolicy: IfNotPresent  
+
+# Public Web application sub-chart override
+publicweb:
+  config:
+    selfUrl: https://microservicesolution.dev
+    gatewayUrl: http://microservicesolution-st-gateway-web-public
+    authServer:
+      authority: https://authserver.microservicesolution.dev # should be domain on production (https://auth.mydomain.com)
+      requireHttpsMetadata: "false"
+      isOnK8s: "true"
+      metaAddress: http://microservicesolution-st-authserver # should be container on production (http://microservicesolution-az-authserver)
+    dotnetEnv: Staging 
+    redisHost: microservicesolution-st-redis
+    rabbitmqHost: microservicesolution-st-rabbitmq
+    elasticsearchUrl: http://microservicesolution-st-elasticsearch
+  ingress:
+    host: microservicesolution.dev
+    tlsSecret: microservicesolution-tls
+  image:
+    repository: mycompanyname/microservicesolution-app-public-web
+    tag: latest
+    pullPolicy: IfNotPresent
+# Web(MVC) back-office application sub-chart override
+web:
+  config:
+    selfUrl: https://web.microservicesolution.dev
+    gatewayUrl: http://microservicesolution-st-gateway-web
+    authServer:
+      authority: https://authserver.microservicesolution.dev # should be domain on production (https://auth.mydomain.com)
+      requireHttpsMetadata: "false"
+      isOnK8s: "true"
+      metaAddress: http://microservicesolution-st-authserver # should be container on production (http://microservicesolution-az-authserver)
+    dotnetEnv: Staging 
+    redisHost: microservicesolution-st-redis
+    rabbitmqHost: microservicesolution-st-rabbitmq
+    elasticsearchUrl: http://microservicesolution-st-elasticsearch
+  ingress:
+    host: web.microservicesolution.dev
+    tlsSecret: microservicesolution-tls
+  image:
+    repository: mycompanyname/microservicesolution-app-web
+    tag: latest
+    pullPolicy: IfNotPresent
+# Default values for MicroserviceSolution.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

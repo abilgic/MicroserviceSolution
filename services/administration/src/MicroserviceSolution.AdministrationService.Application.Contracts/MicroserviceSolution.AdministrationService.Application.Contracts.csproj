@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>MicroserviceSolution.AdministrationService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="8.2.0" />
+        <PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" Version="8.2.0" />
+        <PackageReference Include="Volo.Abp.SettingManagement.Application.Contracts" Version="8.2.0" />
+        <PackageReference Include="Volo.Abp.AuditLogging.Application.Contracts" Version="8.2.0" />
+        <PackageReference Include="Volo.Abp.LanguageManagement.Application.Contracts" Version="8.2.0" />
+        <PackageReference Include="Volo.Abp.TextTemplateManagement.Application.Contracts" Version="8.2.0" />
+        <PackageReference Include="Volo.Abp.Gdpr.Application.Contracts" Version="8.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\MicroserviceSolution.AdministrationService.Domain.Shared\MicroserviceSolution.AdministrationService.Domain.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,58 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "MicroserviceSolution.AdministrationService.HttpApi": {
+      "path": "src/MicroserviceSolution.AdministrationService.HttpApi/MicroserviceSolution.AdministrationService.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.AdministrationService.Application.Contracts": {
+      "path": "src/MicroserviceSolution.AdministrationService.Application.Contracts/MicroserviceSolution.AdministrationService.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.AdministrationService.Application": {
+      "path": "src/MicroserviceSolution.AdministrationService.Application/MicroserviceSolution.AdministrationService.Application.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.AdministrationService.Domain.Shared": {
+      "path": "src/MicroserviceSolution.AdministrationService.Domain.Shared/MicroserviceSolution.AdministrationService.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.AdministrationService.Domain": {
+      "path": "src/MicroserviceSolution.AdministrationService.Domain/MicroserviceSolution.AdministrationService.Domain.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.AdministrationService.EntityFrameworkCore": {
+      "path": "src/MicroserviceSolution.AdministrationService.EntityFrameworkCore/MicroserviceSolution.AdministrationService.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.AdministrationService.HttpApi.Client": {
+      "path": "src/MicroserviceSolution.AdministrationService.HttpApi.Client/MicroserviceSolution.AdministrationService.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.AdministrationService.HttpApi.Host": {
+      "path": "src/MicroserviceSolution.AdministrationService.HttpApi.Host/MicroserviceSolution.AdministrationService.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.AdministrationService.TestBase": {
+      "path": "test/MicroserviceSolution.AdministrationService.TestBase/MicroserviceSolution.AdministrationService.TestBase.abppkg",
+      "folder": "test"
+    },
+    "MicroserviceSolution.AdministrationService.Domain.Tests": {
+      "path": "test/MicroserviceSolution.AdministrationService.Domain.Tests/MicroserviceSolution.AdministrationService.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "MicroserviceSolution.AdministrationService.EntityFrameworkCore.Tests": {
+      "path": "test/MicroserviceSolution.AdministrationService.EntityFrameworkCore.Tests/MicroserviceSolution.AdministrationService.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "MicroserviceSolution.AdministrationService.Application.Tests": {
+      "path": "test/MicroserviceSolution.AdministrationService.Application.Tests/MicroserviceSolution.AdministrationService.Application.Tests.abppkg",
+      "folder": "test"
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "folders": {
+    "src": {},
+    "test": {}
+  },
+  "packages": {
+    "MicroserviceSolution.ProductService.Domain.Shared": {
+      "type": "dotnet-project",
+      "path": "src/MicroserviceSolution.ProductService.Domain.Shared/MicroserviceSolution.ProductService.Domain.Shared.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.domain.shared": {}
+      }      
+    },
+    "MicroserviceSolution.ProductService.Domain": {
+      "type": "dotnet-project",
+      "path": "src/MicroserviceSolution.ProductService.Domain/MicroserviceSolution.ProductService.Domain.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.domain": {}
+      },
+      "contents": {
+        "aggregates": {
+          "MicroserviceSolution.ProductService.Products.Product": {
+            "keyType": "Guid",
+            "summary": "Represents a product.",
+            "collectionProperties": {},
+            "navigationProperties": {}
+          } 
+        },
+        "repositoryInterfaces": {
+          "MicroserviceSolution.ProductService.Products.IProductRepository": {
+            "entity": {
+              "type": "MicroserviceSolution.ProductService.Products.Product",
+              "package": "MicroserviceSolution.ProductService.Domain"
+            }
+          }
+        }
+      }
+    },
+    "MicroserviceSolution.ProductService.Application.Contracts": {
+      "type": "dotnet-project",
+      "path": "src/MicroserviceSolution.ProductService.Application.Contracts/MicroserviceSolution.ProductService.Application.Contracts.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.application.contracts": {}
+      }
+    },
+    "MicroserviceSolution.ProductService.Application": {
+      "type": "dotnet-project",
+      "path": "src/MicroserviceSolution.ProductService.Application/MicroserviceSolution.ProductService.Application.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.application": {}
+      },
+      "contents": {
+        "applicationServices": {
+          "MicroserviceSolution.ProductService.ProductAppService": {}
+        }
+      }
+    },
+    "MicroserviceSolution.ProductService.EntityFrameworkCore": {
+      "type": "dotnet-project",
+      "path": "src/MicroserviceSolution.ProductService.EntityFrameworkCore/MicroserviceSolution.ProductService.EntityFrameworkCore.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.ef": {}
+      },
+      "contents": {
+        "efDbContexts": {
+          "MicroserviceSolution.ProductService.EntityFrameworkCore.ProductServiceDbContext": {
+            "entities": {
+              "MicroserviceSolution.ProductService.Products.Product": {
+                "package": "MicroserviceSolution.ProductService.Domain",
+                "dbSetPropertyOnDbContext": "Products",
+                "databaseTable": "Products" 
+              }
+            }
+          }
+        }
+      }
+    },
+    "MicroserviceSolution.ProductService.HttpApi": {
+      "type": "dotnet-project",
+      "path": "src/MicroserviceSolution.ProductService.HttpApi/MicroserviceSolution.ProductService.HttpApi.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.http-api": {}
+      },
+      "contents": {
+        "controllers": {
+          "MicroserviceSolution.ProductService.Products.ProductController": {},
+          "MicroserviceSolution.ProductService.Products.ProductPublicController": {}
+        }
+      }
+    },
+    "MicroserviceSolution.ProductService.HttpApi.Client": {
+      "type": "dotnet-project",
+      "path": "src/MicroserviceSolution.ProductService.HttpApi.Client/MicroserviceSolution.ProductService.HttpApi.Client.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.http-api-client": {}
+      }
+    },
+    "MicroserviceSolution.ProductService.Web": {
+      "type": "dotnet-project",
+      "path": "src/MicroserviceSolution.ProductService.Web/MicroserviceSolution.ProductService.Web.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.ui.mvc": {}
+      },
+      "contents": {
+        "mvcPages": {
+          "MicroserviceSolution.ProductService.Web.Pages.Products.Index.cshtml": {},
+          "MicroserviceSolution.ProductService.Web.Pages.Products.CreateModal.cshtml": {},
+          "MicroserviceSolution.ProductService.Web.Pages.Products.EditModal.cshtml": {}
+        }
+      }
+    },
+    "MicroserviceSolution.ProductService.Blazor": {
+      "type": "dotnet-project",
+      "path": "src/MicroserviceSolution.ProductService.Blazor/MicroserviceSolution.ProductService.Blazor.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.ui.blazor": {}
+      }
+    },
+    "MicroserviceSolution.ProductService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "src/MicroserviceSolution.ProductService.HttpApi.Host/MicroserviceSolution.ProductService.HttpApi.Host.csproj",
+      "folder": "src",
+      "includes": {
+        "host.http-api": {}
+      }
+    },
+    "MicroserviceSolution.ProductService.TestBase": {
+      "type": "dotnet-project",
+      "path": "test/MicroserviceSolution.ProductService.TestBase/MicroserviceSolution.ProductService.TestBase.csproj",
+      "folder": "test",
+      "includes": {
+        "lib.test": {}
+      }
+    },
+    "MicroserviceSolution.ProductService.Domain.Tests": {
+      "type": "dotnet-project",
+      "path": "test/MicroserviceSolution.ProductService.Domain.Tests/MicroserviceSolution.ProductService.Domain.Tests.csproj",
+      "folder": "test",
+      "includes": {
+        "lib.test": {}
+      }
+    },
+    "MicroserviceSolution.ProductService.EntityFrameworkCore.Tests": {
+      "type": "dotnet-project",
+      "path": "test/MicroserviceSolution.ProductService.EntityFrameworkCore.Tests/MicroserviceSolution.ProductService.EntityFrameworkCore.Tests.csproj",
+      "folder": "test",
+      "includes": {
+        "lib.test": {}
+      }
+    },
+    "MicroserviceSolution.ProductService.Application.Tests": {
+      "type": "dotnet-project",
+      "path": "test/MicroserviceSolution.ProductService.Application.Tests/MicroserviceSolution.ProductService.Application.Tests.csproj",
+      "folder": "test",
+      "includes": {
+        "lib.test": {}
+      }
+    }
+  }
+}

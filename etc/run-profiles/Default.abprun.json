@@ -1,0 +1,54 @@
+{
+  "applications": {
+    "Docker-Dependencies": {
+      "type": "cli",
+      "workingDirectory": "../docker",
+      "startCommand": "./up.ps1",
+      "stopCommand": "./down.ps1"
+    },
+    "MicroserviceSolution.AuthServer": {
+      "type": "dotnet-project",
+      "path": "../../apps/auth-server/src/MicroserviceSolution.AuthServer/MicroserviceSolution.AuthServer.csproj"
+    },
+    "MicroserviceSolution.Blazor": {
+      "type": "dotnet-project",
+      "path": "../../apps/blazor/src/MicroserviceSolution.Blazor/MicroserviceSolution.Blazor.csproj"
+    },
+    "MicroserviceSolution.Blazor.Server": {
+      "type": "dotnet-project",
+      "path": "../../apps/blazor/src/MicroserviceSolution.Blazor.Server/MicroserviceSolution.Blazor.Server.csproj"
+    },
+    "MicroserviceSolution.PublicWeb": {
+      "type": "dotnet-project",
+      "path": "../../apps/public-web/src/MicroserviceSolution.PublicWeb/MicroserviceSolution.PublicWeb.csproj"
+    },
+    "MicroserviceSolution.Web": {
+      "type": "dotnet-project",
+      "path": "../../apps/web/src/MicroserviceSolution.Web/MicroserviceSolution.Web.csproj"
+    },
+    "MicroserviceSolution.AdministrationService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../services/administration/src/MicroserviceSolution.AdministrationService.HttpApi.Host/MicroserviceSolution.AdministrationService.HttpApi.Host.csproj"
+    },
+    "MicroserviceSolution.IdentityService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../services/identity/src/MicroserviceSolution.IdentityService.HttpApi.Host/MicroserviceSolution.IdentityService.HttpApi.Host.csproj"
+    },
+    "MicroserviceSolution.ProductService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../services/product/src/MicroserviceSolution.ProductService.HttpApi.Host/MicroserviceSolution.ProductService.HttpApi.Host.csproj"
+    },
+    "MicroserviceSolution.SaasService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../services/saas/src/MicroserviceSolution.SaasService.HttpApi.Host/MicroserviceSolution.SaasService.HttpApi.Host.csproj"
+    },
+    "MicroserviceSolution.WebGateway": {
+      "type": "dotnet-project",
+      "path": "../../gateways/web/src/MicroserviceSolution.WebGateway/MicroserviceSolution.WebGateway.csproj"
+    },
+    "MicroserviceSolution.PublicWebGateway": {
+      "type": "dotnet-project",
+      "path": "../../gateways/web-public/src/MicroserviceSolution.PublicWebGateway/MicroserviceSolution.PublicWebGateway.csproj"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "folders": {
+    "items": {
+      "src": {}
+    }
+  },
+  "packages": {
+    "MicroserviceSolution.AuthServer": {
+      "path": "src/MicroserviceSolution.AuthServer/MicroserviceSolution.AuthServer.abppkg",
+      "folder": "src"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "MicroserviceSolution.ProductService.Domain.Shared": {
+      "path": "src/MicroserviceSolution.ProductService.Domain.Shared/MicroserviceSolution.ProductService.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.ProductService.Domain": {
+      "path": "src/MicroserviceSolution.ProductService.Domain/MicroserviceSolution.ProductService.Domain.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.ProductService.Application.Contracts": {
+      "path": "src/MicroserviceSolution.ProductService.Application.Contracts/MicroserviceSolution.ProductService.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.ProductService.Application": {
+      "path": "src/MicroserviceSolution.ProductService.Application/MicroserviceSolution.ProductService.Application.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.ProductService.EntityFrameworkCore": {
+      "path": "src/MicroserviceSolution.ProductService.EntityFrameworkCore/MicroserviceSolution.ProductService.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.ProductService.HttpApi": {
+      "path": "src/MicroserviceSolution.ProductService.HttpApi/MicroserviceSolution.ProductService.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.ProductService.HttpApi.Client": {
+      "path": "src/MicroserviceSolution.ProductService.HttpApi.Client/MicroserviceSolution.ProductService.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.ProductService.HttpApi.Host": {
+      "path": "src/MicroserviceSolution.ProductService.HttpApi.Host/MicroserviceSolution.ProductService.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.ProductService.Web": {
+      "path": "src/MicroserviceSolution.ProductService.Web/MicroserviceSolution.ProductService.Web.abppkg",
+      "folder": "src"
+    },
+    "MicroserviceSolution.ProductService.Application.Tests": {
+      "path": "test/MicroserviceSolution.ProductService.Application.Tests/MicroserviceSolution.ProductService.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "MicroserviceSolution.ProductService.Domain.Tests": {
+      "path": "test/MicroserviceSolution.ProductService.Domain.Tests/MicroserviceSolution.ProductService.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "MicroserviceSolution.ProductService.EntityFrameworkCore.Tests": {
+      "path": "test/MicroserviceSolution.ProductService.EntityFrameworkCore.Tests/MicroserviceSolution.ProductService.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "MicroserviceSolution.ProductService.TestBase": {
+      "path": "test/MicroserviceSolution.ProductService.TestBase/MicroserviceSolution.ProductService.TestBase.abppkg",
+      "folder": "test"
+    }
+  }
+}

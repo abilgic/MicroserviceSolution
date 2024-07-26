@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>MicroserviceSolution.Shared.Hosting.AspNetCore</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
+        <PackageReference Include="prometheus-net.AspNetCore" Version="8.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Swashbuckle" Version="8.2.0" />
+        <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="8.2.0" />
+        <ProjectReference Include="..\MicroserviceSolution.Shared.Hosting\MicroserviceSolution.Shared.Hosting.csproj" />
+    </ItemGroup>
+
+</Project>

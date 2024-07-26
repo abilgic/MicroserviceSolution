@@ -1,0 +1,36 @@
+config:
+  selfUrl: # https://gateway-web.microservicesolution.dev
+  corsOrigins: # https://microservicesolution-st-angular
+  globalConfigurationBaseUrl: # http://microservicesolution-st-gateway-web
+  authServer:
+    authority: # http://microservicesolution-st-authserver
+    requireHttpsMetadata: # "false"
+    metadataAddress: # https://authserver.microservicesolution.dev/.well-known/openid-configuration
+    swaggerClientId: # WebGateway_Swagger
+  dotnetEnv: # 
+  redisHost: #
+  rabbitmqHost: #
+  elasticsearchUrl: #
+  AbpLicenseCode: #
+  
+reRoutes:
+  accountService:
+    url: http://microservicesolution-st-authserver
+  saasService:
+    url: http://saas-st-administration
+  administrationService:
+    url: http://microservicesolution-st-administration
+  identityService:
+    url: http://microservicesolution-st-identity
+  productService:
+    url: http://microservicesolution-st-product
+ingress:
+  host: # gateway-web.microservicesolution.dev
+  tlsSecret: microservicesolution-tls
+
+image:
+  repository: mycompanyname/microservicesolution-gateway-web
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

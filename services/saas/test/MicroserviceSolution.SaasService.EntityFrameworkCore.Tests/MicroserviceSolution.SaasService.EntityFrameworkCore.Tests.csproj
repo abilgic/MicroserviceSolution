@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MicroserviceSolution.SaasService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="8.2.0" />
+    <ProjectReference Include="..\MicroserviceSolution.SaasService.Application.Tests\MicroserviceSolution.SaasService.Application.Tests.csproj" />
+    <ProjectReference Include="..\..\src\MicroserviceSolution.SaasService.EntityFrameworkCore\MicroserviceSolution.SaasService.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+config:
+  selfUrl: # 
+  gatewayUrl: # 
+  authServer:
+    authority: # http://microservicesolution-st-authserver
+    requireHttpsMetadata: # "false"
+    isOnK8s: # "true"
+    metaAddress: # http://microservicesolution-st-authserver
+  dotnetEnv: # 
+  redisHost: #
+  rabbitmqHost: #
+  elasticsearchUrl: #
+  stringEncryptionDefaultPassPhrase: gsKnGZ041HLL4IM8
+  AbpLicenseCode: #
+
+ingress:
+  host: # microservicesolution-st-public-web
+  tlsSecret: microservicesolution-tls
+
+image:
+  repository: mycompanyname/microservicesolution-app-public-web
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

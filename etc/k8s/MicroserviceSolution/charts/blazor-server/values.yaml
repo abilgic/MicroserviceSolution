@@ -1,0 +1,25 @@
+config:
+  selfUrl: # https://blazor-server.microservicesolution.dev
+  gatewayUrl: # http://microservicesolution-st-gateway-web
+  authServer:
+    authority: # http://microservicesolution-st-authserver
+    requireHttpsMetadata: # "false"
+    isOnK8s: # "true"
+    metaAddress: # http://microservicesolution-st-authserver
+  dotnetEnv: # 
+  redisHost: #
+  rabbitmqHost: #
+  elasticsearchUrl: #
+  stringEncryptionDefaultPassPhrase: gsKnGZ041HLL4IM8
+  AbpLicenseCode: #
+
+ingress:
+  host: # blazor-server.microservicesolution.dev
+  tlsSecret: microservicesolution-tls
+
+image:
+  repository: mycompanyname/microservicesolution-app-blazor-server
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}   

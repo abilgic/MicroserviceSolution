@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MicroserviceSolution.IdentityService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="8.2.0" />
+    <ProjectReference Include="..\MicroserviceSolution.IdentityService.Application.Tests\MicroserviceSolution.IdentityService.Application.Tests.csproj" />
+    <ProjectReference Include="..\..\src\MicroserviceSolution.IdentityService.EntityFrameworkCore\MicroserviceSolution.IdentityService.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>
